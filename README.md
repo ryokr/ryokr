@@ -71,11 +71,6 @@ YAML               76 hrs 7 mins   ⣿⣄⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀
 
 <!--END_SECTION:waka-simple-->
 
-Liked it ?
-
-*ERC-20 / EVM: **0x07ed706146545d01fa66a3c08ebca8c93a0089e5***
-
-*BTC: **bc1q3lu85cfkrc20ut64v90y428l79wfnv83mu72jv***
 
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=60&section=footer"/>
