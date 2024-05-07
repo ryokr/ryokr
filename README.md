@@ -1,4 +1,4 @@
-<div style="text-align: center;">
+
 
 # Meowing Code
 
@@ -15,6 +15,7 @@ Hobbies: ["Genshin Impact", "Open World", "Meowing Music", "Coding"]
 
 ### Languages - Environments, Testing
 
+<div style="text-align: center;">
 
 | Python | Java | JS |
 |----------|----------|----------|
@@ -25,6 +26,8 @@ Hobbies: ["Genshin Impact", "Open World", "Meowing Music", "Coding"]
 |----------|----------|----------|
 |<img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original-wordmark.svg" title="nodejs" alt="NodeJS" width="55" height="55"/>|<img src="https://github.com/devicons/devicon/blob/master/icons/git/git-original-wordmark.svg" title="Git" alt="Git" width="55" height="55"/>|<img src="https://avatars.githubusercontent.com/u/29265002?s=200&v=4" title="Render" alt="Render" width="55" height="55"/>|
 
+</div>
+
 
 
 <p align="center">
@@ -34,5 +37,3 @@ Hobbies: ["Genshin Impact", "Open World", "Meowing Music", "Coding"]
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=60&section=footer"/>
 </p>
-
-</div>
