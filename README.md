@@ -1,3 +1,5 @@
+<div style="text-align: center;">
+
 # Meowing Code
 
 ### Info
@@ -13,12 +15,12 @@ Hobbies: ["Genshin Impact", "Open World", "Meowing Music", "Coding"]
 
 ### Languages - Environments, Testing
 
-<!-- Left Table -->
+
 | Python | Java | JS |
 |----------|----------|----------|
 | <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" title="Python" alt="Python" width="55" height="55"/> | <img src="https://github.com/devicons/devicon/blob/master/icons/java/java-original.svg" title="Java" alt="Java" width="55" height="55"/> | <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-original.svg" title="JavaScript" alt="JavaScript" width="55" height="55"/> |
 
-<!-- Right Table -->
+
 | nodejs | Git | Render |
 |----------|----------|----------|
 |<img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original-wordmark.svg" title="nodejs" alt="NodeJS" width="55" height="55"/>|<img src="https://github.com/devicons/devicon/blob/master/icons/git/git-original-wordmark.svg" title="Git" alt="Git" width="55" height="55"/>|<img src="https://avatars.githubusercontent.com/u/29265002?s=200&v=4" title="Render" alt="Render" width="55" height="55"/>|
@@ -32,3 +34,5 @@ Hobbies: ["Genshin Impact", "Open World", "Meowing Music", "Coding"]
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=60&section=footer"/>
 </p>
+
+</div>
