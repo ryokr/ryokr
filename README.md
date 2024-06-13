@@ -11,9 +11,6 @@ Fields_Of_Interests: ["Activity Bot", "Automation"]
 Currently_Learning: ["Python", "React"]
 Hobbies: ["Genshin Impact", "Open World", "Meowing Music", "Coding"]
 ```
-<p align="center">
-  <img src="https://cdn.discordapp.com/attachments/1236634193019277322/1248996386532233248/mikogif.gif?ex=6665b207&is=66646087&hm=e3373b433b6a9ca9b814592f175c4ebfd82c6e10d63348289675a8cba6d04c2c&"/>
-</p>
 
 ### Languages - Environments, Testing
 
