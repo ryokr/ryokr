@@ -8,8 +8,8 @@ Located: Ho Chi Minh City, Viet Nam
 From: Binh Phuoc, Viet Nam
 Major: Computer Science
 Fields_Of_Interests: ["Activity Bot", "Automation"]
-Currently_Learning: ["Python", "React"]
-Hobbies: ["Genshin Impact", "Open World", "Meowing Music", "Coding"]
+Currently_Learning: ["Python", "React", "DiscordJS"]
+Hobbies: ["Genshin Impact", "Wuthering Waves", "Open World", "Meowing Music", "Coding"]
 ```
 
 ### Languages - Environments, Testing
