@@ -1,7 +1,7 @@
 
-# Meowing Code
+# ✦ Meowing Code
 
-### Info
+### ✦ Info
 ```yaml
 Name: RyoKr
 Located: Ho Chi Minh City, Viet Nam
@@ -12,7 +12,7 @@ Currently_Learning: ["Python", "React", "DiscordJS"]
 Hobbies: ["Genshin Impact", "Wuthering Waves", "Open World", "Meowing Music", "Coding"]
 ```
 
-### Languages - Environments, Testing
+### ✦ Languages - Environments, Testing
 
 
 | Python | Java | JS |
