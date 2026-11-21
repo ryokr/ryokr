@@ -3,48 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ryokr</title>
-  <meta name="description" content="ryokr — Links, animated SVGs, and Solar Drift." />
-  <meta property="og:title" content="ryokr" />
-  <meta property="og:description" content="ryokr — Links, animated SVGs, and Solar Drift." />
+  <title>RYO.O</title>
+  <meta name="description" content="RYO.O — Links, animated SVGs, and Solar Drift." />
+  <meta property="og:title" content="RYO.O" />
+  <meta property="og:description" content="RYO.O — Links, animated SVGs, and Solar Drift." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/app.css" />
 </head>
-<body id="top" class="min-h-screen bg-[#09090b] text-white antialiased selection:bg-orange-500/35 selection:text-white">
+<body id="top" class="relative min-h-screen bg-[#09090b] text-white antialiased selection:bg-orange-500/35 selection:text-white">
 
   <a href="#main-content" class="skip-link">Skip to content</a>
 
+  <!-- Top Scroll Progress Hairline -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Ambient Living Solar Backdrop -->
+  <div class="ambient-canvas" aria-hidden="true">
+    <div class="ambient-orb ambient-orb-1"></div>
+    <div class="ambient-orb ambient-orb-2"></div>
+    <div class="ambient-orb ambient-orb-3"></div>
+  </div>
+
   <!-- Top Bar -->
-  <header class="sticky top-0 z-40 border-b border-white/15 bg-[#09090b]/90 backdrop-blur-md">
+  <header class="sticky top-0 z-40 border-b border-white/15 bg-[#09090b]/80 backdrop-blur-md">
     <div class="mx-auto flex max-w-6xl items-center justify-between gap-8 px-6 py-4">
-      <a href="#top" class="text-2xl font-extrabold tracking-tight text-white whitespace-nowrap shrink-0">
-        ryokr
+      <a href="#top" class="nav-anim text-2xl font-extrabold tracking-tight text-white whitespace-nowrap shrink-0">
+        RYO<span class="orange-gradient-text">.O</span>
       </a>
 
       <nav class="hidden md:flex items-center gap-8 text-base font-medium text-zinc-200" aria-label="Primary navigation">
-        <a href="#bio" class="hover:text-orange-300 transition-colors whitespace-nowrap shrink-0">Bio</a>
-        <a href="#motion" class="hover:text-orange-300 transition-colors whitespace-nowrap shrink-0">Links</a>
-        <a href="#activity" class="hover:text-orange-300 transition-colors whitespace-nowrap shrink-0">Activity</a>
-        <a href="#arcade" class="hover:text-orange-300 transition-colors whitespace-nowrap shrink-0">Game</a>
+        <a href="#bio" class="nav-anim hover:text-orange-300 transition-colors whitespace-nowrap shrink-0">Bio</a>
+        <a href="#motion" class="nav-anim hover:text-orange-300 transition-colors whitespace-nowrap shrink-0">Links</a>
+        <a href="#activity" class="nav-anim hover:text-orange-300 transition-colors whitespace-nowrap shrink-0">Activity</a>
+        <a href="#arcade" class="nav-anim hover:text-orange-300 transition-colors whitespace-nowrap shrink-0">Game</a>
       </nav>
 
-      <button id="nav-play-btn" type="button" class="orange-gradient-bg min-h-[44px] px-5 py-2 text-base font-bold text-zinc-950 rounded-xl hover:brightness-110 active:scale-[0.98] transition-all whitespace-nowrap shrink-0 cursor-pointer">
+      <button id="nav-play-btn" type="button" class="nav-anim magnetic-btn orange-gradient-bg min-h-[44px] px-5 py-2 text-base font-bold text-zinc-950 rounded-xl hover:brightness-110 transition-all whitespace-nowrap shrink-0 cursor-pointer">
         Play
       </button>
     </div>
   </header>
 
-  <main id="main-content" class="mx-auto max-w-6xl px-6 pb-24">
+  <main id="main-content" class="relative z-10 mx-auto max-w-6xl px-6 pb-24">
 
     <!-- Hero -->
-    <section id="bio" class="pt-12 pb-10" aria-labelledby="hero-title">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+    <section id="bio" class="pt-14 pb-12" aria-labelledby="hero-title">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-stretch">
         <div class="lg:col-span-6 flex flex-col justify-between py-2">
           <div>
-            <h1 id="hero-title" class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.04] text-white text-balance">
-              ✦ THIS IS <span class="orange-gradient-text">RYO.O</span>
+            <h1 id="hero-title" class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.02] text-white text-balance">
+              <span class="reveal-mask"><span class="reveal-line">✦ THIS IS</span></span>
+              <span class="reveal-mask"><span class="reveal-line orange-gradient-text">RYO.O</span></span>
             </h1>
 
             <!-- <p class="mt-5 text-xl sm:text-2xl font-medium leading-snug text-zinc-200 max-w-md">
@@ -52,48 +63,68 @@
             </p> -->
           </div>
 
-          <div class="mt-8 flex flex-wrap items-center gap-4">
-            <a href="https://ryo.id.vn/" target="_blank" rel="noopener noreferrer" class="orange-gradient-bg inline-flex items-center gap-2 min-h-[52px] px-7 py-3 text-lg font-bold text-zinc-950 rounded-xl hover:brightness-110 transition-all whitespace-nowrap shrink-0">
+          <div class="mt-10 flex flex-wrap items-center gap-4">
+            <a href="https://ryo.id.vn/" target="_blank" rel="noopener noreferrer" class="hero-cta magnetic-btn orange-gradient-bg inline-flex items-center gap-2 min-h-[52px] px-7 py-3 text-lg font-bold text-zinc-950 rounded-xl hover:brightness-110 transition-all whitespace-nowrap shrink-0">
               <span>Orange Supreme</span>
               <span aria-hidden="true">→</span>
             </a>
-            <a href="https://www.youtube.com/@ryotoiday" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 min-h-[52px] px-7 py-3 text-lg font-semibold text-white border border-white/25 rounded-xl hover:border-orange-300 transition-colors whitespace-nowrap shrink-0">
+            <a href="https://www.youtube.com/@ryotoiday" target="_blank" rel="noopener noreferrer" class="hero-cta magnetic-btn inline-flex items-center gap-2 min-h-[52px] px-7 py-3 text-lg font-semibold text-white border border-white/25 rounded-xl hover:border-orange-300 transition-colors whitespace-nowrap shrink-0">
               <span>RYO.O</span>
             </a>
           </div>
         </div>
 
-        <div class="lg:col-span-6 flex">
-          <div class="relative w-full overflow-hidden rounded-2xl border border-white/15 bg-[#141418] min-h-[260px]">
+        <div class="lg:col-span-6 flex tilt-stage">
+          <div class="hero-art-frame hero-art-float tilt-card fluent-card relative w-full overflow-hidden rounded-2xl border border-white/15 bg-[#141418] min-h-[280px] lg:min-h-[340px]">
             <img
               src="assets/Anzu_Hanashiro.png"
               alt="Anzu Hanashiro banner artwork"
               referrerpolicy="no-referrer"
-              class="w-full h-full object-cover block"
+              class="hero-art-img w-full h-full object-cover block"
             />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Animated Wave -->
-    <div class="py-2" aria-hidden="true">
+    <!-- Kinetic Editorial Marquee & Wave -->
+    <div class="py-4" aria-hidden="true">
+      <div class="marquee-viewport border-y border-white/10 py-3 mb-2">
+        <div class="marquee-track text-sm sm:text-base font-bold tracking-[0.18em] text-zinc-400">
+          <span class="px-4">RYO.O</span>
+          <span class="px-4 text-orange-400">✦</span>
+          <span class="px-4">ORANGE SUPREME</span>
+          <span class="px-4 text-orange-400">✦</span>
+          <span class="px-4">YOUTUBE</span>
+          <span class="px-4 text-orange-400">✦</span>
+          <span class="px-4">SOLAR DRIFT</span>
+          <span class="px-4 text-orange-400">✦</span>
+          <span class="px-4">RYO.O</span>
+          <span class="px-4 text-orange-400">✦</span>
+          <span class="px-4">ORANGE SUPREME</span>
+          <span class="px-4 text-orange-400">✦</span>
+          <span class="px-4">YOUTUBE</span>
+          <span class="px-4 text-orange-400">✦</span>
+          <span class="px-4">SOLAR DRIFT</span>
+          <span class="px-4 text-orange-400">✦</span>
+        </div>
+      </div>
       <img src="assets/ryo-fluent-wave.svg" alt="" class="w-full h-auto select-none pointer-events-none" />
     </div>
 
     <!-- Animated SVG Links -->
-    <section id="motion" class="py-10" aria-labelledby="links-title">
-      <h2 id="links-title" class="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-6">
+    <section id="motion" class="py-12" aria-labelledby="links-title">
+      <h2 id="links-title" class="scroll-heading text-3xl sm:text-4xl font-bold tracking-tight text-white mb-7">
         Links
       </h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 tilt-stage">
         <!-- 1st Animated SVG: https://ryo.id.vn/ -->
         <a
           href="https://ryo.id.vn/"
           target="_blank"
           rel="noopener noreferrer"
-          class="fluent-card block rounded-2xl p-2"
+          class="bento-card idle-float tilt-card fluent-card block rounded-2xl p-2"
           aria-label="Open ryo.id.vn website"
         >
           <img
@@ -108,7 +139,7 @@
           href="https://www.youtube.com/@ryotoiday"
           target="_blank"
           rel="noopener noreferrer"
-          class="fluent-card block rounded-2xl p-2"
+          class="bento-card idle-float tilt-card fluent-card block rounded-2xl p-2"
           aria-label="Open @ryotoiday YouTube channel"
         >
           <img
@@ -119,11 +150,11 @@
         </a>
       </div>
 
-      <div class="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+      <div class="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch tilt-stage">
         <a
           id="badge-play-link"
           href="#arcade"
-          class="fluent-card lg:col-span-8 block rounded-2xl p-2"
+          class="bento-card idle-float tilt-card fluent-card lg:col-span-8 block rounded-2xl p-2"
           aria-label="Jump to Solar Drift mini-game"
         >
           <img
@@ -133,7 +164,7 @@
           />
         </a>
 
-        <div class="fluent-card lg:col-span-4 rounded-2xl p-6 flex items-center justify-between gap-4">
+        <div class="bento-card idle-float tilt-card fluent-card lg:col-span-4 rounded-2xl p-6 flex items-center justify-between gap-4">
           <h3 class="text-2xl font-bold text-white">Sunburst</h3>
           <svg viewBox="0 0 110 110" class="w-24 h-24 shrink-0" role="img" aria-label="Animated orange sunburst">
             <defs>
@@ -159,29 +190,32 @@
     </section>
 
     <!-- GitHub Contribution Snake -->
-    <section id="activity" class="py-10" aria-labelledby="activity-title">
-      <h2 id="activity-title" class="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-6">
-        Activity
-      </h2>
+    <section id="activity" class="py-12" aria-labelledby="activity-title">
+      <div class="scroll-heading flex flex-wrap items-center justify-between gap-4 mb-6">
+        <h2 id="activity-title" class="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+          Activity
+        </h2>
+        <span id="activity-meta" class="text-lg font-semibold tabular-nums text-orange-300"></span>
+      </div>
 
-      <div class="rounded-2xl border border-white/15 bg-[#141418] p-5 sm:p-6 overflow-hidden">
+      <div class="scroll-reveal rounded-2xl border border-white/15 bg-[#141418] p-5 sm:p-6 overflow-hidden">
         <div id="snake-mount" class="snake-orange-theme w-full">
-          <img src="assets/github-snake.svg" alt="GitHub contribution snake" class="w-full h-auto block" />
+          <img src="assets/github-snake.svg" alt="Orange GitHub contribution snake" class="w-full h-auto block" />
         </div>
       </div>
     </section>
 
     <!-- Solar Drift Game -->
-    <section id="arcade" class="py-10" aria-labelledby="arcade-title">
-      <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+    <section id="arcade" class="py-12" aria-labelledby="arcade-title">
+      <div class="scroll-heading flex flex-wrap items-center justify-between gap-4 mb-6">
         <h2 id="arcade-title" class="text-3xl sm:text-4xl font-bold tracking-tight text-white">
           Solar Drift
         </h2>
         <div class="flex items-center gap-3 shrink-0">
-          <button id="btn-sound" type="button" aria-pressed="true" class="min-h-[48px] px-5 py-2.5 text-base font-semibold rounded-xl border border-white/20 bg-[#141418] text-white hover:border-orange-300 transition-colors whitespace-nowrap shrink-0 cursor-pointer">
+          <button id="btn-sound" type="button" aria-pressed="true" class="magnetic-btn min-h-[48px] px-5 py-2.5 text-base font-semibold rounded-xl border border-white/20 bg-[#141418] text-white hover:border-orange-300 transition-colors whitespace-nowrap shrink-0 cursor-pointer">
             Sound On
           </button>
-          <button id="btn-pause" type="button" disabled class="min-h-[48px] px-5 py-2.5 text-base font-semibold rounded-xl border border-white/20 bg-[#141418] text-white hover:border-orange-300 disabled:opacity-40 disabled:cursor-not-allowed transition-colors whitespace-nowrap shrink-0 cursor-pointer">
+          <button id="btn-pause" type="button" disabled class="magnetic-btn min-h-[48px] px-5 py-2.5 text-base font-semibold rounded-xl border border-white/20 bg-[#141418] text-white hover:border-orange-300 disabled:opacity-40 disabled:cursor-not-allowed transition-colors whitespace-nowrap shrink-0 cursor-pointer">
             Pause
           </button>
         </div>
@@ -189,7 +223,7 @@
 
       <p id="game-status" class="sr-only" aria-live="polite"></p>
 
-      <div class="rounded-2xl border border-white/15 bg-[#141418] overflow-hidden">
+      <div class="arcade-reveal rounded-2xl border border-white/15 bg-[#141418] overflow-hidden">
         <!-- Large Accessible HUD -->
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 border-b border-white/15 px-6 py-5">
           <div>
@@ -228,7 +262,7 @@
                 <button type="button" data-difficulty="turbo" class="min-h-[48px] px-5 py-2.5 text-base font-semibold rounded-xl bg-zinc-900 text-zinc-100 border border-white/20 whitespace-nowrap shrink-0 cursor-pointer">Turbo</button>
               </div>
 
-              <button id="btn-start" type="button" class="mt-6 orange-gradient-bg min-h-[52px] px-9 py-3 text-lg font-bold text-zinc-950 rounded-xl hover:brightness-110 active:scale-[0.98] transition-all whitespace-nowrap shrink-0 cursor-pointer">
+              <button id="btn-start" type="button" class="magnetic-btn mt-6 orange-gradient-bg min-h-[52px] px-9 py-3 text-lg font-bold text-zinc-950 rounded-xl hover:brightness-110 transition-all whitespace-nowrap shrink-0 cursor-pointer">
                 Start
               </button>
             </div>
@@ -239,10 +273,10 @@
             <div class="text-center">
               <h3 class="text-4xl font-extrabold text-white">Paused</h3>
               <div class="mt-6 flex items-center justify-center gap-4">
-                <button id="btn-resume" type="button" class="orange-gradient-bg min-h-[52px] px-7 py-3 text-lg font-bold text-zinc-950 rounded-xl hover:brightness-110 whitespace-nowrap shrink-0 cursor-pointer">
+                <button id="btn-resume" type="button" class="magnetic-btn orange-gradient-bg min-h-[52px] px-7 py-3 text-lg font-bold text-zinc-950 rounded-xl hover:brightness-110 whitespace-nowrap shrink-0 cursor-pointer">
                   Resume
                 </button>
-                <button id="btn-restart-pause" type="button" class="min-h-[52px] px-7 py-3 text-lg font-semibold text-white border border-white/25 rounded-xl hover:border-orange-300 whitespace-nowrap shrink-0 cursor-pointer">
+                <button id="btn-restart-pause" type="button" class="magnetic-btn min-h-[52px] px-7 py-3 text-lg font-semibold text-white border border-white/25 rounded-xl hover:border-orange-300 whitespace-nowrap shrink-0 cursor-pointer">
                   Restart
                 </button>
               </div>
@@ -269,7 +303,7 @@
                 </div>
               </div>
 
-              <button id="btn-play-again" type="button" class="mt-6 orange-gradient-bg min-h-[52px] px-9 py-3 text-lg font-bold text-zinc-950 rounded-xl hover:brightness-110 active:scale-[0.98] transition-all whitespace-nowrap shrink-0 cursor-pointer">
+              <button id="btn-play-again" type="button" class="magnetic-btn mt-6 orange-gradient-bg min-h-[52px] px-9 py-3 text-lg font-bold text-zinc-950 rounded-xl hover:brightness-110 transition-all whitespace-nowrap shrink-0 cursor-pointer">
                 Play Again
               </button>
             </div>
@@ -290,9 +324,9 @@
 
   </main>
 
-  <footer class="border-t border-white/15 py-8">
+  <footer class="relative z-10 border-t border-white/15 py-8">
     <div class="mx-auto flex max-w-6xl flex-col sm:flex-row items-center justify-between gap-4 px-6 text-base font-medium text-zinc-300">
-      <p>ryokr</p>
+      <p>RYO.O</p>
       <div class="flex items-center gap-6">
         <a href="https://ryo.id.vn/" target="_blank" rel="noopener noreferrer" class="hover:text-orange-300 transition-colors">ryo.id.vn</a>
         <a href="https://www.youtube.com/@ryotoiday" target="_blank" rel="noopener noreferrer" class="hover:text-orange-300 transition-colors">YouTube</a>
@@ -301,6 +335,9 @@
     </div>
   </footer>
 
-  <script src="assets/arcade.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" defer></script>
+  <script src="src/motion.js" defer></script>
+  <script src="src/arcade.js" defer></script>
 </body>
 </html>

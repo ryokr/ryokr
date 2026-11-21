@@ -19,6 +19,7 @@
     background-color: #09090b;
     color: #ffffff;
     font-family: var(--font-sans);
+    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -50,15 +51,91 @@
   left: 16px;
 }
 
-/* Fluent motion surfaces */
+/* Ambient Solar Background Orbs */
+.ambient-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.ambient-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(110px);
+  will-change: transform, opacity;
+}
+
+.ambient-orb-1 {
+  top: -12%;
+  left: -8%;
+  width: 44vw;
+  height: 44vw;
+  max-width: 580px;
+  max-height: 580px;
+  background: radial-gradient(circle, rgba(255, 85, 0, 0.22), rgba(255, 136, 26, 0.04) 70%, transparent);
+}
+
+.ambient-orb-2 {
+  top: 38%;
+  right: -12%;
+  width: 40vw;
+  height: 40vw;
+  max-width: 520px;
+  max-height: 520px;
+  background: radial-gradient(circle, rgba(255, 184, 77, 0.16), rgba(255, 98, 20, 0.04) 70%, transparent);
+}
+
+.ambient-orb-3 {
+  bottom: -14%;
+  left: 26%;
+  width: 38vw;
+  height: 38vw;
+  max-width: 500px;
+  max-height: 500px;
+  background: radial-gradient(circle, rgba(255, 110, 26, 0.15), transparent 70%);
+}
+
+/* Scroll Progress Hairline */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 60;
+  transform-origin: left center;
+  transform: scaleX(0);
+  background: linear-gradient(90deg, #ff5500 0%, #ff881a 50%, #ffb84d 100%);
+  pointer-events: none;
+}
+
+/* Masked Hero Line Reveal */
+.reveal-mask {
+  overflow: hidden;
+  display: block;
+}
+
+.reveal-line {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+/* 3D Perspective & Fluent Motion Surfaces */
+.tilt-stage {
+  perspective: 1100px;
+}
+
 .fluent-card {
   position: relative;
   background-color: #141418;
   border: 1px solid rgba(255, 255, 255, 0.16);
+  transform-style: preserve-3d;
+  will-change: transform;
   transition:
-    transform 200ms cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 200ms cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 200ms cubic-bezier(0.16, 1, 0.3, 1);
+    border-color 220ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fluent-card::before {
@@ -68,26 +145,38 @@
   border-radius: inherit;
   pointer-events: none;
   background: radial-gradient(
-    420px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(255, 136, 26, 0.16),
+    440px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 148, 54, 0.2),
     transparent 65%
   );
   opacity: 0;
-  transition: opacity 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 220ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fluent-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(255, 184, 77, 0.65);
-  box-shadow: 0 18px 40px -18px rgba(255, 94, 26, 0.35);
+  border-color: rgba(255, 184, 77, 0.72);
+  box-shadow: 0 24px 54px -20px rgba(255, 94, 26, 0.42);
 }
 
 .fluent-card:hover::before {
   opacity: 1;
 }
 
+/* Marquee Track */
+.marquee-viewport {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
 .orange-gradient-text {
-  background: linear-gradient(120deg, #ff6a1a 0%, #ff9436 50%, #ffc466 100%);
+  background: linear-gradient(120deg, #ff5e14 0%, #ff9436 50%, #ffc466 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -120,7 +209,7 @@
   .fluent-card::before {
     transition: none;
   }
-  .fluent-card:hover {
-    transform: none;
+  .ambient-orb {
+    display: none;
   }
 }

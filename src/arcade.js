@@ -10,9 +10,12 @@
     });
   });
 
-  // Load and inline GitHub Snake SVG with gradient-orange CSS variable theme
+  // Live Current-Year Orange Contribution Snake SVG (falls back to assets/github-snake.svg)
   const snakeMount = document.getElementById('snake-mount');
-  if (snakeMount) {
+  const activityMeta = document.getElementById('activity-meta');
+
+  function loadFallbackSnake() {
+    if (!snakeMount) return;
     fetch('assets/github-snake.svg')
       .then((res) => {
         if (!res.ok) throw new Error('Snake SVG unavailable');
@@ -23,11 +26,181 @@
         const doc = parser.parseFromString(svgMarkup, 'image/svg+xml');
         const svgEl = doc.querySelector('svg');
         if (svgEl) {
-          svgEl.setAttribute('aria-label', 'Animated GitHub contribution snake in orange gradient');
+          svgEl.setAttribute('aria-label', 'Animated GitHub contribution snake in orange');
           snakeMount.replaceChildren(document.importNode(svgEl, true));
         }
       })
       .catch(() => {});
+  }
+
+  function renderLiveOrangeSnake(contributions, year, totalCommits) {
+    if (!snakeMount || !Array.isArray(contributions) || contributions.length === 0) {
+      loadFallbackSnake();
+      return;
+    }
+
+    if (activityMeta) {
+      activityMeta.textContent = `${Number(totalCommits || 0).toLocaleString()} commits · ${year}`;
+    }
+
+    const ns = 'http://www.w3.org/2000/svg';
+    const levelColors = ['#1b191d', '#5c2008', '#9a3412', '#ea580c', '#ffb84d'];
+    const snakeColors = ['#ffb84d', '#ff881a', '#ff6214', '#ea580c'];
+    const cellSize = 12;
+    const step = 16;
+
+    // Pad start so Jan 1 aligns to its real weekday row (0 = Sun .. 6 = Sat)
+    const firstDate = new Date(`${contributions[0].date}T00:00:00Z`);
+    const startOffset = firstDate.getUTCDay();
+    const totalWeeks = Math.ceil((startOffset + contributions.length) / 7);
+    const width = Math.max(totalWeeks * step, 848);
+    const height = 148;
+
+    const svg = document.createElementNS(ns, 'svg');
+    svg.setAttribute('viewBox', `-8 -20 ${width + 16} ${height}`);
+    svg.setAttribute('role', 'img');
+    svg.setAttribute('aria-label', `Animated orange snake eating ${totalCommits} commits in ${year}`);
+    svg.style.width = '100%';
+    svg.style.height = 'auto';
+    svg.style.display = 'block';
+
+    const cells = [];
+    const pathOrder = [];
+
+    // Build grid by column (serpentine down/up so the snake sweeps smoothly across the year)
+    for (let w = 0; w < totalWeeks; w += 1) {
+      const colCells = [];
+      for (let d = 0; d < 7; d += 1) {
+        const idx = w * 7 + d - startOffset;
+        const item = idx >= 0 && idx < contributions.length ? contributions[idx] : null;
+        const x = w * step + 2;
+        const y = d * step + 2;
+
+        const rect = document.createElementNS(ns, 'rect');
+        rect.setAttribute('x', String(x));
+        rect.setAttribute('y', String(y));
+        rect.setAttribute('width', String(cellSize));
+        rect.setAttribute('height', String(cellSize));
+        rect.setAttribute('rx', '3');
+
+        const baseColor = item ? (levelColors[item.level] || levelColors[0]) : '#131216';
+        rect.setAttribute('fill', baseColor);
+
+        if (item) {
+          const title = document.createElementNS(ns, 'title');
+          title.textContent = `${item.date}: ${item.count} commit${item.count === 1 ? '' : 's'}`;
+          rect.appendChild(title);
+        }
+
+        svg.appendChild(rect);
+        const cellData = { rect, x: x - 1, y: y - 1, baseColor, hasCommit: Boolean(item && item.count > 0) };
+        cells.push(cellData);
+        colCells.push(cellData);
+      }
+
+      if (w % 2 === 1) colCells.reverse();
+      pathOrder.push(...colCells);
+    }
+
+    // Orange progress track along the bottom
+    const trackBg = document.createElementNS(ns, 'rect');
+    trackBg.setAttribute('x', '2');
+    trackBg.setAttribute('y', '120');
+    trackBg.setAttribute('width', String(width - 4));
+    trackBg.setAttribute('height', '6');
+    trackBg.setAttribute('rx', '3');
+    trackBg.setAttribute('fill', '#1b191d');
+    svg.appendChild(trackBg);
+
+    const trackFill = document.createElementNS(ns, 'rect');
+    trackFill.setAttribute('x', '2');
+    trackFill.setAttribute('y', '120');
+    trackFill.setAttribute('width', '0');
+    trackFill.setAttribute('height', '6');
+    trackFill.setAttribute('rx', '3');
+    trackFill.setAttribute('fill', '#ff881a');
+    svg.appendChild(trackFill);
+
+    // 4-segment orange snake
+    const snakeSegments = snakeColors.map((color, i) => {
+      const seg = document.createElementNS(ns, 'rect');
+      const pad = i * 0.8;
+      const size = 14 - pad * 1.6;
+      seg.setAttribute('x', String(pad));
+      seg.setAttribute('y', String(pad));
+      seg.setAttribute('width', String(size.toFixed(1)));
+      seg.setAttribute('height', String(size.toFixed(1)));
+      seg.setAttribute('rx', '4');
+      seg.setAttribute('fill', color);
+      seg.setAttribute('transform', 'translate(1, -18)');
+      svg.appendChild(seg);
+      return seg;
+    });
+
+    snakeMount.replaceChildren(svg);
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reducedMotion) {
+      const lastIdx = pathOrder.length - 1;
+      snakeSegments.forEach((seg, sIdx) => {
+        const pos = pathOrder[Math.max(0, lastIdx - sIdx)];
+        if (pos) seg.setAttribute('transform', `translate(${pos.x}, ${pos.y})`);
+      });
+      trackFill.setAttribute('width', String(width - 4));
+      return;
+    }
+
+    let stepIndex = 0;
+    let lastTick = 0;
+    const stepMs = 42;
+
+    function animateSnake(ts) {
+      if (!document.body.contains(svg)) return;
+      if (ts - lastTick >= stepMs) {
+        lastTick = ts;
+
+        if (stepIndex === 0) {
+          cells.forEach((c) => c.rect.setAttribute('fill', c.baseColor));
+        }
+
+        const headCell = pathOrder[stepIndex];
+        if (headCell && headCell.hasCommit) {
+          headCell.rect.setAttribute('fill', '#1b191d');
+        }
+
+        snakeSegments.forEach((seg, sIdx) => {
+          const idx = stepIndex - sIdx;
+          if (idx >= 0 && idx < pathOrder.length) {
+            const p = pathOrder[idx];
+            seg.setAttribute('transform', `translate(${p.x}, ${p.y})`);
+          } else {
+            seg.setAttribute('transform', 'translate(1, -18)');
+          }
+        });
+
+        const progress = (stepIndex + 1) / pathOrder.length;
+        trackFill.setAttribute('width', String(((width - 4) * progress).toFixed(1)));
+
+        stepIndex = (stepIndex + 1) % pathOrder.length;
+      }
+      requestAnimationFrame(animateSnake);
+    }
+
+    requestAnimationFrame(animateSnake);
+  }
+
+  if (snakeMount) {
+    const currentYear = new Date().getFullYear();
+    fetch(`https://github-contributions-api.jogruber.de/v4/ryokr?y=${currentYear}`)
+      .then((res) => {
+        if (!res.ok) throw new Error('Contributions API unavailable');
+        return res.json();
+      })
+      .then((data) => {
+        const totalForYear = data?.total?.[String(currentYear)] ?? 0;
+        renderLiveOrangeSnake(data?.contributions, currentYear, totalForYear);
+      })
+      .catch(loadFallbackSnake);
   }
 
   // Solar Drift — Accessible Fluent 2D Arcade Game

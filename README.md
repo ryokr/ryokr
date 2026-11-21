@@ -28,5 +28,5 @@
 <br />
 
 <div align="center">
-  <img src="assets/github-snake.svg" width="100%" alt="GitHub Contribution Snake" />
+  <img src="assets/github-snake.svg" width="100%" alt="Orange GitHub Contribution Snake" />
 </div>
