@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 140" width="560" height="140" role="img" aria-label="Play Solar Drift mini game">
+  <defs>
+    <linearGradient id="arcBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141110" />
+      <stop offset="100%" stop-color="#25150C" />
+    </linearGradient>
+    <linearGradient id="arcOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF5500" />
+      <stop offset="50%" stop-color="#FF881A" />
+      <stop offset="100%" stop-color="#FFB84D" />
+    </linearGradient>
+    <filter id="arcGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect x="2" y="2" width="556" height="136" rx="20" fill="url(#arcBg)" stroke="url(#arcOrange)" stroke-opacity="0.7" stroke-width="2" />
+
+  <!-- Orbiting Solar System Emblem -->
+  <g transform="translate(72, 70)">
+    <circle cx="0" cy="0" r="32" fill="none" stroke="url(#arcOrange)" stroke-width="1.8" stroke-opacity="0.6" />
+    <circle cx="0" cy="0" r="15" fill="url(#arcOrange)" filter="url(#arcGlow)">
+      <animate attributeName="r" values="14;16.5;14" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="5s" repeatCount="indefinite" />
+      <circle cx="32" cy="0" r="5" fill="#FFB847" />
+    </g>
+  </g>
+
+  <text x="132" y="60" fill="#FFB84D" font-family="'Outfit', system-ui, -apple-system, sans-serif" font-size="15" font-weight="600" letter-spacing="0.4">Mini Game</text>
+  <text x="132" y="98" fill="#FFFFFF" font-family="'Outfit', system-ui, -apple-system, sans-serif" font-size="34" font-weight="700" letter-spacing="-0.5">Solar Drift</text>
+
+  <!-- Animated Bouncing Orbs on Right -->
+  <circle cx="480" cy="48" r="8" fill="url(#arcOrange)" filter="url(#arcGlow)">
+    <animate attributeName="cy" values="38;86;38" dur="3.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" />
+  </circle>
+  <circle cx="510" cy="80" r="6" fill="#FFB847" opacity="0.9">
+    <animate attributeName="cy" values="86;38;86" dur="2.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" />
+  </circle>
+  <rect x="466" y="104" width="60" height="9" rx="4.5" fill="url(#arcOrange)">
+    <animate attributeName="x" values="456;476;456" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" />
+  </rect>
+</svg>

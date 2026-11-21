@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 88" width="1120" height="88" role="img" aria-label="Fluent orange animated wave divider">
+  <defs>
+    <linearGradient id="waveOrangeA" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF4D00" stop-opacity="0.05" />
+      <stop offset="25%" stop-color="#FF7A18" stop-opacity="0.75" />
+      <stop offset="50%" stop-color="#FFB347" stop-opacity="0.95" />
+      <stop offset="75%" stop-color="#FF7A18" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#FF4D00" stop-opacity="0.05" />
+    </linearGradient>
+    <linearGradient id="waveOrangeB" x1="100%" y1="0%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#FFB347" stop-opacity="0.05" />
+      <stop offset="35%" stop-color="#FF5E1A" stop-opacity="0.55" />
+      <stop offset="65%" stop-color="#FFA63B" stop-opacity="0.65" />
+      <stop offset="100%" stop-color="#FF4D00" stop-opacity="0.05" />
+    </linearGradient>
+  </defs>
+
+  <path d="M-80,44 C140,14 340,74 560,44 C780,14 980,74 1200,44" fill="none" stroke="url(#waveOrangeA)" stroke-width="2.5" stroke-linecap="round">
+    <animate attributeName="d" values="
+      M-80,44 C140,14 340,74 560,44 C780,14 980,74 1200,44;
+      M-80,44 C140,72 340,16 560,44 C780,72 980,16 1200,44;
+      M-80,44 C140,14 340,74 560,44 C780,14 980,74 1200,44"
+      dur="7s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" />
+  </path>
+
+  <path d="M-80,48 C180,76 380,18 560,48 C740,76 940,18 1200,48" fill="none" stroke="url(#waveOrangeB)" stroke-width="1.6" stroke-linecap="round">
+    <animate attributeName="d" values="
+      M-80,48 C180,76 380,18 560,48 C740,76 940,18 1200,48;
+      M-80,48 C180,20 380,76 560,48 C740,20 940,76 1200,48;
+      M-80,48 C180,76 380,18 560,48 C740,76 940,18 1200,48"
+      dur="5.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" />
+  </path>
+
+  <!-- Flowing Kinetic Nodes -->
+  <circle cy="44" r="4" fill="#FFB347">
+    <animate attributeName="cx" values="60;1060;60" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1" />
+    <animate attributeName="opacity" values="0.2;1;0.2" dur="4.5s" repeatCount="indefinite" />
+  </circle>
+  <circle cy="44" r="3" fill="#FF5E1A">
+    <animate attributeName="cx" values="1060;60;1060" dur="11s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1" />
+    <animate attributeName="opacity" values="0.2;0.9;0.2" dur="5.5s" repeatCount="indefinite" />
+  </circle>
+</svg>

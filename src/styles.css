@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Outfit", system-ui, -apple-system, sans-serif;
+  --font-sans: "Outfit", system-ui, -apple-system, sans-serif;
+  --font-mono: "Outfit", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #09090b;
+    color: #ffffff;
+    font-family: var(--font-sans);
+    font-size: 16px;
+  }
+
+  body {
+    background-color: #09090b;
+    color: #ffffff;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, button, input, a {
+    font-family: var(--font-sans);
+  }
+
+  :focus-visible {
+    outline: 3px solid #ffb84d;
+    outline-offset: 3px;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 12px;
+  z-index: 100;
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: #ffb84d;
+  color: #09090b;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.skip-link:focus {
+  left: 16px;
+}
+
+/* Fluent motion surfaces */
+.fluent-card {
+  position: relative;
+  background-color: #141418;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  transition:
+    transform 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fluent-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    420px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 136, 26, 0.16),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fluent-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 184, 77, 0.65);
+  box-shadow: 0 18px 40px -18px rgba(255, 94, 26, 0.35);
+}
+
+.fluent-card:hover::before {
+  opacity: 1;
+}
+
+.orange-gradient-text {
+  background: linear-gradient(120deg, #ff6a1a 0%, #ff9436 50%, #ffc466 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.orange-gradient-bg {
+  background: linear-gradient(120deg, #ff6214 0%, #ff8c24 55%, #ffb84d 100%);
+}
+
+/* Re-theme embedded GitHub Snake SVG in warm gradient orange */
+.snake-orange-theme svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  --cb: rgba(255, 255, 255, 0.06);
+  --cs: #ff881a;
+  --ce: #1b191d;
+  --c0: #1b191d;
+  --c1: #4a1808;
+  --c2: #9a3412;
+  --c3: #ea580c;
+  --c4: #ffb84d;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .fluent-card,
+  .fluent-card::before {
+    transition: none;
+  }
+  .fluent-card:hover {
+    transform: none;
+  }
+}

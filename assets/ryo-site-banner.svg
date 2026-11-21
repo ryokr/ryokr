@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 180" width="560" height="180" role="img" aria-label="Visit ryo.id.vn">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141110" />
+      <stop offset="55%" stop-color="#1D1410" />
+      <stop offset="100%" stop-color="#28160B" />
+    </linearGradient>
+    <linearGradient id="orangeFlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF5500">
+        <animate attributeName="stop-color" values="#FF5500;#FF881A;#FFB84D;#FF5500" dur="6s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#FFB84D">
+        <animate attributeName="stop-color" values="#FFB84D;#FF5500;#FF881A;#FFB84D" dur="6s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+    <linearGradient id="borderShine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF881A" stop-opacity="0.85" />
+      <stop offset="50%" stop-color="#FFB84D" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#FF5500" stop-opacity="0.85" />
+    </linearGradient>
+    <linearGradient id="waveFill1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF5500" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#FFB84D" stop-opacity="0.06" />
+    </linearGradient>
+    <linearGradient id="shimmer" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0" />
+      <stop offset="50%" stop-color="#FFB84D" stop-opacity="0.14" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+    </linearGradient>
+    <clipPath id="cardClip">
+      <rect x="2" y="2" width="556" height="176" rx="20" />
+    </clipPath>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g clip-path="url(#cardClip)">
+    <rect x="2" y="2" width="556" height="176" rx="20" fill="url(#bgGrad)" />
+
+    <path d="M-40,130 C90,90 210,165 340,120 C440,85 520,135 620,105 L620,200 L-40,200 Z" fill="url(#waveFill1)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -36,6; 0,0" dur="7s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1" />
+    </path>
+
+    <rect x="-220" y="0" width="180" height="180" fill="url(#shimmer)" transform="skewX(-22)">
+      <animateTransform attributeName="transform" type="translate" values="-220,0; 780,0" dur="4.8s" repeatCount="indefinite" />
+    </rect>
+
+    <!-- Left Orbiting Emblem -->
+    <g transform="translate(80, 90)">
+      <circle cx="0" cy="0" r="40" fill="none" stroke="url(#orangeFlow)" stroke-width="2" stroke-dasharray="18 10" opacity="0.75">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="14s" repeatCount="indefinite" />
+      </circle>
+      <rect x="-24" y="-24" width="48" height="48" rx="14" fill="url(#orangeFlow)" filter="url(#softGlow)">
+        <animateTransform attributeName="transform" type="translate" values="0,-2; 0,2; 0,-2" dur="3.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1" />
+      </rect>
+      <path d="M-8,-8 L8,-8 L8,1 M-8,8 L8,-8" fill="none" stroke="#09090B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <animateTransform attributeName="transform" type="translate" values="0,-2; 0,2; 0,-2" dur="3.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1" />
+      </path>
+    </g>
+
+    <!-- Minimal Large Outfit Typography -->
+    <text x="148" y="84" fill="#FFB84D" font-family="'Outfit', system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" letter-spacing="0.4">Website</text>
+    <text x="148" y="122" fill="#FFFFFF" font-family="'Outfit', system-ui, -apple-system, sans-serif" font-size="38" font-weight="700" letter-spacing="-0.6">ryo.id.vn</text>
+
+    <!-- Action Arrow -->
+    <g transform="translate(492, 90)">
+      <circle cx="0" cy="0" r="22" fill="#FF881A" fill-opacity="0.2" stroke="url(#orangeFlow)" stroke-width="1.8" />
+      <path d="M-6,0 L6,0 M1,-5 L6,0 L1,5" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <animateTransform attributeName="transform" type="translate" values="-1,0; 2,0; -1,0" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1" />
+      </path>
+    </g>
+  </g>
+
+  <rect x="2" y="2" width="556" height="176" rx="20" fill="none" stroke="url(#borderShine)" stroke-width="2" />
+</svg>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ryokr</title>
+  <meta name="description" content="ryokr — Links, animated SVGs, and Solar Drift." />
+  <meta property="og:title" content="ryokr" />
+  <meta property="og:description" content="ryokr — Links, animated SVGs, and Solar Drift." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/app.css" />
+</head>
+<body id="top" class="min-h-screen bg-[#09090b] text-white antialiased selection:bg-orange-500/35 selection:text-white">
+
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <!-- Top Bar -->
+  <header class="sticky top-0 z-40 border-b border-white/15 bg-[#09090b]/90 backdrop-blur-md">
+    <div class="mx-auto flex max-w-6xl items-center justify-between gap-8 px-6 py-4">
+      <a href="#top" class="text-2xl font-extrabold tracking-tight text-white whitespace-nowrap shrink-0">
+        ryokr
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-base font-medium text-zinc-200" aria-label="Primary navigation">
+        <a href="#bio" class="hover:text-orange-300 transition-colors whitespace-nowrap shrink-0">Bio</a>
+        <a href="#motion" class="hover:text-orange-300 transition-colors whitespace-nowrap shrink-0">Links</a>
+        <a href="#activity" class="hover:text-orange-300 transition-colors whitespace-nowrap shrink-0">Activity</a>
+        <a href="#arcade" class="hover:text-orange-300 transition-colors whitespace-nowrap shrink-0">Game</a>
+      </nav>
+
+      <button id="nav-play-btn" type="button" class="orange-gradient-bg min-h-[44px] px-5 py-2 text-base font-bold text-zinc-950 rounded-xl hover:brightness-110 active:scale-[0.98] transition-all whitespace-nowrap shrink-0 cursor-pointer">
+        Play
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content" class="mx-auto max-w-6xl px-6 pb-24">
+
+    <!-- Hero -->
+    <section id="bio" class="pt-12 pb-10" aria-labelledby="hero-title">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+        <div class="lg:col-span-6 flex flex-col justify-between py-2">
+          <div>
+            <h1 id="hero-title" class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.04] text-white text-balance">
+              ✦ THIS IS <span class="orange-gradient-text">RYO.O</span>
+            </h1>
+
+            <!-- <p class="mt-5 text-xl sm:text-2xl font-medium leading-snug text-zinc-200 max-w-md">
+              Web, motion, and small interactive things.
+            </p> -->
+          </div>
+
+          <div class="mt-8 flex flex-wrap items-center gap-4">
+            <a href="https://ryo.id.vn/" target="_blank" rel="noopener noreferrer" class="orange-gradient-bg inline-flex items-center gap-2 min-h-[52px] px-7 py-3 text-lg font-bold text-zinc-950 rounded-xl hover:brightness-110 transition-all whitespace-nowrap shrink-0">
+              <span>Orange Supreme</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <a href="https://www.youtube.com/@ryotoiday" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 min-h-[52px] px-7 py-3 text-lg font-semibold text-white border border-white/25 rounded-xl hover:border-orange-300 transition-colors whitespace-nowrap shrink-0">
+              <span>RYO.O</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 flex">
+          <div class="relative w-full overflow-hidden rounded-2xl border border-white/15 bg-[#141418] min-h-[260px]">
+            <img
+              src="assets/Anzu_Hanashiro.png"
+              alt="Anzu Hanashiro banner artwork"
+              referrerpolicy="no-referrer"
+              class="w-full h-full object-cover block"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Animated Wave -->
+    <div class="py-2" aria-hidden="true">
+      <img src="assets/ryo-fluent-wave.svg" alt="" class="w-full h-auto select-none pointer-events-none" />
+    </div>
+
+    <!-- Animated SVG Links -->
+    <section id="motion" class="py-10" aria-labelledby="links-title">
+      <h2 id="links-title" class="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-6">
+        Links
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- 1st Animated SVG: https://ryo.id.vn/ -->
+        <a
+          href="https://ryo.id.vn/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="fluent-card block rounded-2xl p-2"
+          aria-label="Open ryo.id.vn website"
+        >
+          <img
+            src="assets/ryo-site-banner.svg"
+            alt="ryo.id.vn animated card"
+            class="w-full h-auto rounded-xl block"
+          />
+        </a>
+
+        <!-- 2nd Animated SVG: https://www.youtube.com/@ryotoiday -->
+        <a
+          href="https://www.youtube.com/@ryotoiday"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="fluent-card block rounded-2xl p-2"
+          aria-label="Open @ryotoiday YouTube channel"
+        >
+          <img
+            src="assets/ryo-youtube-banner.svg"
+            alt="@ryotoiday YouTube animated card"
+            class="w-full h-auto rounded-xl block"
+          />
+        </a>
+      </div>
+
+      <div class="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        <a
+          id="badge-play-link"
+          href="#arcade"
+          class="fluent-card lg:col-span-8 block rounded-2xl p-2"
+          aria-label="Jump to Solar Drift mini-game"
+        >
+          <img
+            src="assets/ryo-arcade-badge.svg"
+            alt="Solar Drift mini-game animated card"
+            class="w-full h-auto rounded-xl block"
+          />
+        </a>
+
+        <div class="fluent-card lg:col-span-4 rounded-2xl p-6 flex items-center justify-between gap-4">
+          <h3 class="text-2xl font-bold text-white">Sunburst</h3>
+          <svg viewBox="0 0 110 110" class="w-24 h-24 shrink-0" role="img" aria-label="Animated orange sunburst">
+            <defs>
+              <linearGradient id="inlineSunGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FF5500" />
+                <stop offset="55%" stop-color="#FF881A" />
+                <stop offset="100%" stop-color="#FFB84D" />
+              </linearGradient>
+            </defs>
+            <circle cx="55" cy="55" r="46" fill="none" stroke="url(#inlineSunGrad)" stroke-width="2" stroke-dasharray="10 8" opacity="0.8">
+              <animateTransform attributeName="transform" type="rotate" from="0 55 55" to="360 55 55" dur="16s" repeatCount="indefinite" />
+            </circle>
+            <circle cx="55" cy="55" r="32" fill="none" stroke="#FFB84D" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.6">
+              <animateTransform attributeName="transform" type="rotate" from="360 55 55" to="0 55 55" dur="11s" repeatCount="indefinite" />
+            </circle>
+            <polygon points="55,24 63,47 86,55 63,63 55,86 47,63 24,55 47,47" fill="url(#inlineSunGrad)">
+              <animateTransform attributeName="transform" type="rotate" from="0 55 55" to="360 55 55" dur="22s" repeatCount="indefinite" />
+            </polygon>
+            <circle cx="55" cy="55" r="7" fill="#09090b" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- GitHub Contribution Snake -->
+    <section id="activity" class="py-10" aria-labelledby="activity-title">
+      <h2 id="activity-title" class="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-6">
+        Activity
+      </h2>
+
+      <div class="rounded-2xl border border-white/15 bg-[#141418] p-5 sm:p-6 overflow-hidden">
+        <div id="snake-mount" class="snake-orange-theme w-full">
+          <img src="assets/github-snake.svg" alt="GitHub contribution snake" class="w-full h-auto block" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Solar Drift Game -->
+    <section id="arcade" class="py-10" aria-labelledby="arcade-title">
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+        <h2 id="arcade-title" class="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+          Solar Drift
+        </h2>
+        <div class="flex items-center gap-3 shrink-0">
+          <button id="btn-sound" type="button" aria-pressed="true" class="min-h-[48px] px-5 py-2.5 text-base font-semibold rounded-xl border border-white/20 bg-[#141418] text-white hover:border-orange-300 transition-colors whitespace-nowrap shrink-0 cursor-pointer">
+            Sound On
+          </button>
+          <button id="btn-pause" type="button" disabled class="min-h-[48px] px-5 py-2.5 text-base font-semibold rounded-xl border border-white/20 bg-[#141418] text-white hover:border-orange-300 disabled:opacity-40 disabled:cursor-not-allowed transition-colors whitespace-nowrap shrink-0 cursor-pointer">
+            Pause
+          </button>
+        </div>
+      </div>
+
+      <p id="game-status" class="sr-only" aria-live="polite"></p>
+
+      <div class="rounded-2xl border border-white/15 bg-[#141418] overflow-hidden">
+        <!-- Large Accessible HUD -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 border-b border-white/15 px-6 py-5">
+          <div>
+            <span class="block text-sm font-medium text-zinc-300">Score</span>
+            <span id="hud-score" class="text-2xl sm:text-3xl font-bold tabular-nums text-white">0</span>
+          </div>
+          <div>
+            <span class="block text-sm font-medium text-zinc-300">Combo</span>
+            <span id="hud-combo" class="text-2xl sm:text-3xl font-bold tabular-nums text-orange-300">x1</span>
+          </div>
+          <div>
+            <span class="block text-sm font-medium text-zinc-300">Shields</span>
+            <span id="hud-shields" class="text-2xl sm:text-3xl font-bold tabular-nums text-white">3 / 3</span>
+          </div>
+          <div class="sm:text-right">
+            <span class="block text-sm font-medium text-zinc-300">Best</span>
+            <span id="hud-best" class="text-2xl sm:text-3xl font-bold tabular-nums text-amber-300">0</span>
+          </div>
+        </div>
+
+        <!-- Game Canvas -->
+        <div class="relative w-full aspect-[880/460] bg-[#0b0b0e] select-none touch-none">
+          <canvas id="solar-canvas" class="w-full h-full block cursor-crosshair" aria-label="Solar Drift game board"></canvas>
+
+          <!-- Start Menu -->
+          <div id="overlay-menu" class="absolute inset-0 flex items-center justify-center bg-[#09090b]/85 backdrop-blur-sm p-6">
+            <div class="max-w-md w-full text-center">
+              <h3 class="text-4xl font-extrabold tracking-tight text-white">Solar Drift</h3>
+              <p class="mt-2 text-lg text-zinc-200">
+                Catch orbs. Dodge dark spikes.
+              </p>
+
+              <div class="mt-6 flex items-center justify-center gap-3" role="group" aria-label="Difficulty">
+                <button type="button" data-difficulty="chill" class="min-h-[48px] px-5 py-2.5 text-base font-semibold rounded-xl bg-zinc-900 text-zinc-100 border border-white/20 whitespace-nowrap shrink-0 cursor-pointer">Chill</button>
+                <button type="button" data-difficulty="fluent" class="min-h-[48px] px-5 py-2.5 text-base font-bold rounded-xl orange-gradient-bg text-zinc-950 whitespace-nowrap shrink-0 cursor-pointer">Fluent</button>
+                <button type="button" data-difficulty="turbo" class="min-h-[48px] px-5 py-2.5 text-base font-semibold rounded-xl bg-zinc-900 text-zinc-100 border border-white/20 whitespace-nowrap shrink-0 cursor-pointer">Turbo</button>
+              </div>
+
+              <button id="btn-start" type="button" class="mt-6 orange-gradient-bg min-h-[52px] px-9 py-3 text-lg font-bold text-zinc-950 rounded-xl hover:brightness-110 active:scale-[0.98] transition-all whitespace-nowrap shrink-0 cursor-pointer">
+                Start
+              </button>
+            </div>
+          </div>
+
+          <!-- Pause -->
+          <div id="overlay-pause" class="hidden absolute inset-0 flex items-center justify-center bg-[#09090b]/85 backdrop-blur-sm p-6">
+            <div class="text-center">
+              <h3 class="text-4xl font-extrabold text-white">Paused</h3>
+              <div class="mt-6 flex items-center justify-center gap-4">
+                <button id="btn-resume" type="button" class="orange-gradient-bg min-h-[52px] px-7 py-3 text-lg font-bold text-zinc-950 rounded-xl hover:brightness-110 whitespace-nowrap shrink-0 cursor-pointer">
+                  Resume
+                </button>
+                <button id="btn-restart-pause" type="button" class="min-h-[52px] px-7 py-3 text-lg font-semibold text-white border border-white/25 rounded-xl hover:border-orange-300 whitespace-nowrap shrink-0 cursor-pointer">
+                  Restart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Game Over -->
+          <div id="overlay-gameover" class="hidden absolute inset-0 flex items-center justify-center bg-[#09090b]/88 backdrop-blur-sm p-6">
+            <div class="max-w-sm w-full text-center">
+              <h3 class="text-4xl font-extrabold text-white">Game Over</h3>
+
+              <div class="mt-6 grid grid-cols-3 gap-4 border-y border-white/15 py-4">
+                <div>
+                  <span class="block text-sm text-zinc-300">Score</span>
+                  <span id="over-score" class="text-2xl font-bold tabular-nums text-white">0</span>
+                </div>
+                <div>
+                  <span class="block text-sm text-zinc-300">Combo</span>
+                  <span id="over-combo" class="text-2xl font-bold tabular-nums text-orange-300">x1</span>
+                </div>
+                <div>
+                  <span class="block text-sm text-zinc-300">Best</span>
+                  <span id="over-best" class="text-2xl font-bold tabular-nums text-amber-300">0</span>
+                </div>
+              </div>
+
+              <button id="btn-play-again" type="button" class="mt-6 orange-gradient-bg min-h-[52px] px-9 py-3 text-lg font-bold text-zinc-950 rounded-xl hover:brightness-110 active:scale-[0.98] transition-all whitespace-nowrap shrink-0 cursor-pointer">
+                Play Again
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accessible Touch / Button Controls -->
+        <div class="grid grid-cols-2 gap-4 border-t border-white/15 p-4 bg-[#111115]">
+          <button id="btn-left" type="button" aria-label="Move paddle left" class="min-h-[52px] rounded-xl border border-white/20 bg-[#19191f] text-lg font-bold text-white hover:border-orange-300 active:bg-orange-500/20 transition-colors cursor-pointer select-none">
+            ← Left
+          </button>
+          <button id="btn-right" type="button" aria-label="Move paddle right" class="min-h-[52px] rounded-xl border border-white/20 bg-[#19191f] text-lg font-bold text-white hover:border-orange-300 active:bg-orange-500/20 transition-colors cursor-pointer select-none">
+            Right →
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-white/15 py-8">
+    <div class="mx-auto flex max-w-6xl flex-col sm:flex-row items-center justify-between gap-4 px-6 text-base font-medium text-zinc-300">
+      <p>ryokr</p>
+      <div class="flex items-center gap-6">
+        <a href="https://ryo.id.vn/" target="_blank" rel="noopener noreferrer" class="hover:text-orange-300 transition-colors">ryo.id.vn</a>
+        <a href="https://www.youtube.com/@ryotoiday" target="_blank" rel="noopener noreferrer" class="hover:text-orange-300 transition-colors">YouTube</a>
+        <a href="https://github.com/ryokr/ryokr" target="_blank" rel="noopener noreferrer" class="hover:text-orange-300 transition-colors">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/arcade.js" defer></script>
+</body>
+</html>
